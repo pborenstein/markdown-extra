@@ -6,7 +6,8 @@
 
 namespace mattfarina\MarkdownExtra;
 
-use dflydev\markdown\MarkdownExtraParser;
+/* use dflydev\markdown\MarkdownExtraParser; */
+use \Michelf\MarkdownExtra;
 
 /**
  * Convert markdown to html.
@@ -26,8 +27,8 @@ class Convert extends \Fortissimo\Command\Base {
 
     $markdown = $this->param('markdown');
 
-    $markdownParser = new MarkdownExtraParser();
+    $markdownParser = new MarkdownExtra();
 
-    return $markdownParser->transformMarkdown($markdown);
+    return $markdownParser->transform($markdown);
   }
 }
